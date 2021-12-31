@@ -1,0 +1,635 @@
+/* Page Rule */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+:root {
+  --main-color: #ffc107;
+}
+
+/* Page Rule */
+
+/* Start Video Background */
+
+.video--back {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.video--back video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video--back .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 555;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.video--back .overlay .hero--text h1 {
+  font-weight: 900;
+  font-size: 80px;
+  letter-spacing: 1px;
+  line-height: 120px;
+}
+
+.video--back .overlay .hero--text p {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.video--back .overlay .hero--text p span {
+  position: relative;
+}
+
+.video--back .overlay .hero--text p span:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+}
+
+.video--back .down {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 5555;
+  display: block;
+  color: #fff;
+  font-size: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 565px) {
+  .video--back .overlay .hero--text h1 {
+    line-height: 80px;
+    font-size: 50px;
+  }
+  .video--back .overlay .hero--text p {
+    font-size: 14px;
+  }
+}
+
+/* End Video Background */
+
+/* Start Header */
+
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  transition: 0.3s all ease-in-out;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .container .logo {
+  display: block;
+  font-size: 27px;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+#header .container .toggle-menu {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+#header .container .toggle-menu i {
+  font-size: 30px;
+  color: #000;
+}
+
+#header .container .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+}
+
+#header .container .nav-list .nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #717275;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+#header .container .nav-list .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  right: -25px;
+  bottom: -20px;
+  transition: 0.3s all ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#header .container .nav-list .nav-link.active::after,
+#header .container .nav-list .nav-link:hover::after {
+  opacity: 1;
+  bottom: 3px;
+}
+
+#header .container .nav-list .nav-link:hover {
+  color: #000;
+}
+
+#header .container .nav-list .nav-link.active {
+  color: #000;
+}
+
+@media (max-width: 1120px) {
+  #header {
+    position: relative;
+    position: sticky;
+  }
+
+  #header .container .navbar {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s all ease-in-out;
+  }
+
+  #header .container .navbar.active {
+    height: 355px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  #header .container .navbar .nav-list {
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  #header .container .toggle-menu {
+    display: block;
+  }
+}
+
+/* End Header */
+
+/* Start Studio Section */
+
+#studio {
+  padding: 170px 0;
+}
+
+#studio h1 {
+  font-size: 55px;
+  font-weight: 900;
+  padding: 35px 0;
+}
+
+#studio .text--content {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+#studio .text--content p {
+  color: #717275;
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  #studio h1 {
+    font-size: 40px;
+  }
+  #studio .text--content {
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+}
+
+.stand-up {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.stand-up .first-one {
+  background-image: url(https://templatemo.com/templates/templatemo_567_nomad_force/images/elena-rabkina-eVVzwsNhNf4-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 25%;
+}
+
+.stand-up .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 50px;
+  background-color: rgb(33, 37, 41);
+  color: #fff;
+  width: 30%;
+  height: 550px;
+}
+
+.stand-up .content h1 {
+  font-size: 35px;
+}
+
+.stand-up .content .links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stand-up .content .links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: fit-content;
+}
+
+.stand-up .content .links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  right: 0;
+  background-color: #fff;
+  transition: 0.25s all ease-in-out;
+}
+
+.stand-up .content .links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.final-sec {
+  background-image: url("https://templatemo.com/templates/templatemo_567_nomad_force/images/people/studio-shot-beautiful-happy-retired-caucasian-female-with-pixie-hairdo-crossing-arms-her-chest-having-confident-look-smiling-broadly.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 45%;
+  position: relative;
+}
+
+.final-sec .info {
+  width: 280px;
+  background-color: var(--main-color);
+  padding: 15px 25px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.final-sec .info h1 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+@media (max-width: 1100px) {
+  .stand-up .first-one,
+  .content,
+  .final-sec {
+    width: 100% !important;
+    height: 500px;
+  }
+}
+
+/* End Studio Section */
+
+/* Start Portfolio Section */
+
+#portfolio {
+  padding: 70px 0;
+}
+
+#portfolio .port-header {
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+}
+
+#portfolio .imgs-container {
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+  flex-wrap: wrap;
+  padding-top: 75px;
+}
+
+#portfolio img {
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s ease-out all;
+}
+
+#portfolio img:hover {
+  transform: scale(1.01);
+}
+
+#portfolio .left-imgs,
+.right-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+#portfolio h3 {
+  font-size: 30px;
+  padding: 5px 0 0 5px;
+}
+
+#portfolio .left-imgs .effortless p {
+  color: #dc3545;
+  font-size: 20px;
+  padding: 0 5px;
+}
+
+#portfolio .left-imgs .health p {
+  color: #198754;
+  font-size: 20px;
+  padding: 0 5px;
+}
+
+#portfolio .right-imgs .maki p {
+  font-size: 20px;
+  padding: 0 5px;
+  color: var(--main-color);
+}
+
+#portfolio .right-imgs .gig p {
+  font-size: 20px;
+  padding: 0 5px;
+  color: #0dcaf0;
+}
+
+@media (max-width: 767px) {
+  #portfolio img {
+    width: 100%;
+  }
+  #portfolio h1 {
+    font-size: 30px !important;
+  }
+  #portfolio h3 {
+    font-size: 25px;
+  }
+  #portfolio p {
+    font-size: 16px !important;
+  }
+}
+
+/* End Portfolio Section */
+
+/* Start News Section */
+
+#news {
+  padding: 85px 0;
+}
+
+#news .news-header {
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+}
+
+#news .content-container {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  padding-top: 60px;
+}
+
+#news img {
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s ease-out all;
+}
+
+#news img:hover {
+  transform: scale(1.005);
+}
+
+#news .left {
+  width: 50%;
+  position: relative;
+}
+
+#news .left img {
+  width: 100%;
+  display: block;
+}
+
+#news .top-left-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  padding: 7px 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+#news a {
+  color: #565758;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 15px 5px 15px 0;
+  font-size: 25px;
+  transition: 0.4s all linear;
+  width: fit-content;
+  display: block;
+}
+
+#news a:hover {
+  color: #000;
+}
+
+#news p {
+  padding: 0 5px;
+}
+
+#news p,
+#news a {
+  color: #565758;
+}
+
+#news .right {
+  width: 50%;
+}
+
+#news .right img {
+  width: 100%;
+}
+
+#news .right .events,
+#news .right .news {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  width: 50%;
+}
+
+#news .right .events {
+  margin-bottom: 52px;
+}
+
+#news .right a {
+  height: fit-content;
+  width: 300px !important;
+}
+
+#news .right .events span {
+  background-color: rgb(13, 110, 253);
+}
+
+#news .right .news span {
+  background-color: rgb(25, 135, 84);
+}
+
+@media (max-width: 1100px) {
+  #news .container .content-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #news .container .left {
+    width: 100%;
+    font-size: 16px !important;
+  }
+
+  #news .container .right {
+    width: 100%;
+  }
+
+  #news a {
+    font-size: 20px !important;
+  }
+
+  #news .container .right .events,
+  #news .container .right .news {
+    width: 100%;
+    flex-direction: column;
+    font-size: 16px !important;
+  }
+}
+
+/* End News Section */
+
+/* Start Footer */
+
+#contact {
+  background-color: #000;
+  padding: 70px 0;
+  color: #fff;
+}
+
+#contact .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact .info a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 25px 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+#contact .info a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.45);
+  transition: 0.25s all ease-in-out;
+}
+
+#contact .info a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+#contact p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+#contact .links {
+  align-self: flex-end;
+}
+
+#contact .links .social-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+#contact .links .social-list a {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 25px;
+}
+/* End Footer */
